@@ -1,0 +1,22 @@
+quanah:/lustre/scratch/jenjense$ cd 200mammals
+quanah:/lustre/scratch/jenjense/200mammals$ ls wc -l
+ls: cannot access wc: No such file or directory
+quanah:/lustre/scratch/jenjense/200mammals$ ls|wc -l
+2
+quanah:/lustre/scratch/jenjense/200mammals$ ls
+round2_complete  round3_complete
+quanah:/lustre/scratch/jenjense/200mammals$ cd ../..
+quanah:/lustre/scratch$ mkdir yanchen
+mkdir: cannot create directory ‘yanchen’: Permission denied
+quanah:/lustre/scratch$ quanah:/lustre/scratch$ mkdir yanchen
+-bash: quanah:/lustre/scratch$: No such file or directory
+quanah:/lustre/scratch$ mkdir: cannot create directory ‘yanchen’: Permission denied
+-bash: mkdir:: command not found
+quanah:/lustre/scratch$ cd yanchen
+-bash: cd: yanchen: No such file or directory
+quanah:/lustre/scratch$ ~
+-bash: /home/yannchen: Is a directory
+quanah:/lustre/scratch$ cd yannchen
+quanah:/lustre/scratch/yannchen$ mkdir testing
+quanah:/lustre/scratch/yannchen$ ls
+testing
