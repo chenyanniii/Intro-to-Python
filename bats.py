@@ -12,3 +12,6 @@ sp2code = sp2genus + sp2species
 sp3genus = species3.split(" ")[0][:3].upper()
 sp3species = species3.split(" ")[1][:3].upper()
 sp3code = sp3genus+sp3species
+
+message = "There are three species of bats:"
+print(message + "\n" + sp1code + "\n" + sp2code + "\n" + sp3code) 
