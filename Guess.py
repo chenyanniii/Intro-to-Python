@@ -24,7 +24,9 @@
 import random
 computer_pick = random.randint(1,1000)
 
-guess_input = input("What number do you guess?")
+guess_input = input("Let's play a number guessing game! \
+Guess a number between 1 and 1000. \
+What number do you guess?")
 guess = int(guess_input)
 
 if guess == computer_pick:
