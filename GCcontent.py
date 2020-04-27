@@ -7,7 +7,6 @@
 # 2. Break the sequence into smaller sequences 100 bp long
 # 3. Creat a GC function to calculate GC content
 # 4. Use the GC function to calculate GC content of each fragment
-# 5. Generate a GC content histogram
 ##################################################
 
 
