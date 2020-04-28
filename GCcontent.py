@@ -33,8 +33,9 @@ def GC_content(input_seq):
 	dna_count = input_seq.count('A') + input_seq.count('T') + input_seq.count('G') + input_seq.count('C') 
 	gc_count = input_seq.count('G') + input_seq.count('C') 
 	gc_content = gc_count / dna_count
-	print(gc_content)
+	return(gc_content)
 	
 print("##################################################") 
 print("4. Use the GC function to calculate GC content of each fragment")
 gc_each = [GC_content(i) for i in seq_100]
+print(gc_each)
