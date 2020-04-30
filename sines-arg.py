@@ -20,25 +20,30 @@ args=vars(argp.parse_args())
 #8. Determine min, max, and mean length for each sub-family of SINE (metulj and ZenoSINE)
 
 #########################################################
-
 ### 1. Import data
 col = ("Scaffold","Start","Stop","Element","Score", \
 "Strand","Family","Sub-Family","Divergence")
 df = pd.read_csv(args["READS"], names = col, sep = "\t")
 
+##############################################################################################
 ### 2. Find families in the data frame
 print("There are " + str(len(df.Family.unique())) + " unique families.")
 
+##############################################################################################
 ### 3. Build new data frame using only family "SINE"
 df_SINE = df[df["Family"] == args["FAMILY"]]
 
+##############################################################################################
 ### 4. Drop column "Strand" and "Score"
 df_simple = df_SINE.drop(["Strand","Score"],axis=1)
 
+##############################################################################################
 ### 5. Create new column "Length" and "Proportion"
 df_simple["Length"] = df_simple["Stop"] - df_simple["Start"]
 df_simple["Proportion"] = df_simple["Length"] / args["GENOME"]
 
+##############################################################################################
+### 6-8 Determin min, max and mean
 print("The minmum length in SINE is " + str(df_simple["Length"].min()) + ".")
 print("The maximum length in SINE is " + str(df_simple["Length"].max()) + ".")
 print("The mean length in SINE is " + str(df_simple["Length"].mean()) + ".")
@@ -56,3 +61,7 @@ print("The maximum length in metulj is " + str(df_metulj["Length"].max()) + \
 ", and in ZenoSINE is " + str(df_ZenoSINE["Length"].max()) + ".")
 print("The mean length in metulj is " + str(df_metulj["Length"].mean()) + \
 ", and in ZenoSINE is " + str(df_ZenoSINE["Length"].mean()) + ".")
+
+##############################################################################################
+###9 Save the SINEs dataframe as “aVan.csv”
+df_simple.to_csv("aVan.csv", sep='\t')
